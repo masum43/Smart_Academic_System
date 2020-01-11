@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Smart Academic System</string>
+
+
+    <string-array name="services_array">
+        <item>Who You Are?</item>
+        <item>Teacher</item>
+        <item>Student</item>
+        <item>Guardian</item>
+    </string-array>
+
+
+</resources>
