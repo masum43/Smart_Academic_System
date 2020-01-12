@@ -17,4 +17,10 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+
+
+    <style name="Spinner" parent="Widget.AppCompat.Spinner">
+        <item name="android:background">@color/newColorPrimaryDark</item>
+    </style>
+
 </resources>

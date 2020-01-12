@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StudentHomeActivity"
-    android:background="@color/blueLight"
     android:fitsSystemWindows="true"
     android:id="@+id/drawerLayoutId"
+    android:background="#3A75AC"
 
     >
 
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/nav_view_id"
-        android:background="@color/orange"
+        android:background="#c7c7c7"
         app:menu="@menu/drawer_menu"
         app:headerLayout="@layout/header"
         android:fitsSystemWindows="true"

@@ -9,9 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TeachersProfileActivity" />
-        <activity android:name=".GuardianHomeActivity" />
-        <activity android:name=".TeachersHomeActivity" />
+
+        <activity android:name=".TeachersProfileActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity android:name=".GuardianHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity android:name=".TeachersHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
 
 
         <activity android:name=".StudentHomeActivity"
@@ -20,10 +29,20 @@
         </activity>
 
 
-        <activity android:name=".GuardianLoginActivity" />
-        <activity android:name=".TeachersLoginActivity" />
-        <activity android:name=".StudentLoginActivity" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".GuardianLoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity android:name=".TeachersLoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity android:name=".StudentLoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity android:name=".SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,12 +52,6 @@
         <activity android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             >
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

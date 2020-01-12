@@ -5,16 +5,16 @@
 
     <group android:checkableBehavior="single">
 
-       
+
         <item
             android:id="@+id/myProfile"
             android:title="My Profile"
-            android:icon="@drawable/ic_action_work"
+            android:icon="@drawable/ic_action_settings"
             />
         <item
             android:id="@+id/myAttendance"
             android:title="My Attendance"
-            android:icon="@drawable/ic_action_work"
+            android:icon="@drawable/ic_action_attendance"
             />
         <item
             android:id="@+id/myClassRoutine"

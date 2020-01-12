@@ -3,7 +3,6 @@
 
 
     <string-array name="services_array">
-        <item>Who You Are?</item>
         <item>Teacher</item>
         <item>Student</item>
         <item>Guardian</item>

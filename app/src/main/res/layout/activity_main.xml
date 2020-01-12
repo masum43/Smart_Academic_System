@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:padding="50dp"
-    android:background="@color/blueLight"
     >
 
     <ImageView
@@ -17,28 +16,54 @@
         android:layout_marginTop="70dp"
         />
 
-
-
-    <Spinner
-        android:id="@+id/services_spinner"
-        android:layout_width="fill_parent"
+    <TextView
+        android:id="@+id/whoYouAreId"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#030000"
+        android:text="Who You Are?"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="#161515"
+        android:padding="5dp"
         android:layout_below="@+id/logoId"
         android:layout_marginTop="70dp"
-
         />
+
+    <RelativeLayout
+        android:id="@+id/relId1"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/whoYouAreId"
+        android:background="@drawable/round_bg"
+        >
+
+        <Spinner
+            android:id="@+id/services_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:textColor="#030000"
+            android:layout_marginStart="10dp"
+
+            />
+    </RelativeLayout>
+
+
 
     <Button
         android:id="@+id/okBtnId"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="40dp"
-        android:background="#DA8B2E"
         android:text="Ok"
         android:textStyle="bold"
         android:textSize="20sp"
-        android:layout_below="@+id/services_spinner"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/relId1"
+        android:background="@drawable/round_bg"
+        android:shadowColor="@color/newColorPrimaryDark"
+        android:backgroundTint="#D0BB1111"
+
         />
 
 
