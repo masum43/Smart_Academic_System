@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="nav_view_id">
+
+    <group android:checkableBehavior="single">
+
+       
+        <item
+            android:id="@+id/myProfile"
+            android:title="My Profile"
+            android:icon="@drawable/ic_action_work"
+            />
+        <item
+            android:id="@+id/myAttendance"
+            android:title="My Attendance"
+            android:icon="@drawable/ic_action_work"
+            />
+        <item
+            android:id="@+id/myClassRoutine"
+            android:title="My Class Routine"
+            android:icon="@drawable/ic_action_work"
+            />
+        <item
+            android:id="@+id/myExamRoutine"
+            android:title="My Exam Routine"
+            android:icon="@drawable/ic_action_work"
+            />
+        <item
+            android:id="@+id/myReportCard"
+            android:title="My Report Card"
+            android:icon="@drawable/ic_action_work"
+            />
+        <item
+            android:id="@+id/myDues"
+            android:title="My Dues"
+            android:icon="@drawable/ic_action_work"
+            />
+
+    </group>
+    <item android:title="Controls">
+
+        <menu>
+            <item
+                android:id="@+id/changePass"
+                android:title="Change Password"
+                android:icon="@drawable/ic_action_settings"/>
+            <item
+                android:id="@+id/logOut"
+                android:title="Log Out"
+                android:icon="@drawable/ic_action_settings"/>
+
+        </menu>
+
+
+    </item>
+
+</menu>

@@ -57,10 +57,11 @@
         android:layout_height="60dp"
         android:layout_below="@+id/etStdPass"
         android:layout_marginTop="20dp"
-        android:background="@color/green"
+        android:background="#DA8B2E"
         android:text="Login"
         android:textStyle="bold"
         android:textSize="20sp"
+        android:onClick="studentLoginBtn"
         />
 
 
