@@ -7,63 +7,122 @@
     tools:context=".StudentLoginActivity"
     android:padding="20dp"
     android:gravity="center"
-    android:background="@color/blueLight"
+    android:background="#F7F5F5"
     >
 
-    <LinearLayout
-        android:id="@+id/lin1IdMain"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="40dp"
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true"
+        android:layout_centerInParent="true"
+        android:id="@+id/cv"
+
         >
-
-        <TextView
-            android:id="@+id/tvStdLoginId"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Student Login"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:gravity="center_horizontal"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+                <View
+                    android:layout_alignParentStart="true"
+                    android:layout_width="8dp"
+                    android:layout_height="match_parent"
+                    android:background="#2fa881"
+                    />
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:text="Student Login"
+                    android:textColor="#FFCC00"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    />
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:paddingStart="50dp"
+                android:paddingEnd="30dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:textColorHint="#c5c5c5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:textSize="18sp"
+                        android:hint="UserName"
+                        android:textColor="#2fa881"
+                        android:id="@+id/et_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:background="@drawable/selector_bg_edit"
+                        android:textCursorDrawable="@drawable/bg_input_cursor"
+                        android:paddingBottom="2dp"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:paddingStart="50dp"
+                android:paddingEnd="30dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:textColorHint="#c5c5c5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:textSize="18sp"
+                        android:hint="Password"
+                        android:textColor="#2fa881"
+                        android:id="@+id/et_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:background="@drawable/selector_bg_edit"
+                        android:textCursorDrawable="@drawable/bg_input_cursor"
+                        android:paddingBottom="2dp"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
 
-            />
-    </LinearLayout>
-
-
-
-    <EditText
-        android:layout_below="@+id/lin1IdMain"
-        android:id="@+id/etStdID"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:hint="Student ID"
-        android:textStyle="bold"
-        android:layout_marginStart="5dp"
-        />
-    <EditText
-        android:id="@+id/etStdPass"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:hint="Password"
-        android:textStyle="bold"
-        android:layout_marginStart="5dp"
-        android:layout_below="@+id/etStdID"
-        android:layout_marginTop="20dp"
-        />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_below="@+id/etStdPass"
-        android:layout_marginTop="20dp"
-        android:background="#DA8B2E"
-        android:text="Login"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:onClick="studentLoginBtn"
-        />
-
+                <Button
+                    android:id="@+id/bt_go"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/btn_shape"
+                    android:stateListAnimator="@drawable/state_list_animator"
+                    android:text="Go"
+                    android:textColor="#d3d3d3"
+                    android:onClick="studentLoginBtn"
+                    />
+            </RelativeLayout>
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#9a9a9a"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/forgot_your_password"
+                />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 
 </RelativeLayout>
