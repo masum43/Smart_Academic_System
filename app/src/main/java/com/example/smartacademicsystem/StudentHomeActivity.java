@@ -34,9 +34,6 @@ public class StudentHomeActivity extends AppCompatActivity implements Navigation
 
         NavigationView navigationView = findViewById(R.id.nav_view_id);
         navigationView.setNavigationItemSelectedListener(this);
-        // i miss these line so now lets check it..
-
-        // friends now create fragments
 
         HomeFragment fragment = new HomeFragment();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -56,12 +53,12 @@ public class StudentHomeActivity extends AppCompatActivity implements Navigation
             fragmentTransaction.replace(R.id.frame_layout, fragment, "Home");
             fragmentTransaction.commit();
         }
-        /*else if (id == R.id.work) {
-            WorkFragment fragment = new WorkFragment();
+        else if (id == R.id.myAttendance) {
+            AttendenceFragment fragment = new AttendenceFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame_layout, fragment, "Work");
+            fragmentTransaction.replace(R.id.frame_layout, fragment, "Attendance");
             fragmentTransaction.commit();
-        } */
+        }
 
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
