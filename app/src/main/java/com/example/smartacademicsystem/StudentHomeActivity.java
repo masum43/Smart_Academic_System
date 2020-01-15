@@ -59,6 +59,25 @@ public class StudentHomeActivity extends AppCompatActivity implements Navigation
             fragmentTransaction.replace(R.id.frame_layout, fragment, "Attendance");
             fragmentTransaction.commit();
         }
+        else if (id == R.id.myClassRoutine)
+        {
+
+            StudentClassRoutineFragment fragment = new StudentClassRoutineFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frame_layout, fragment, "StdClsRoutine");
+            fragmentTransaction.commit();
+
+        }
+
+        else if (id == R.id.changePass)
+        {
+
+            ChangeStudentsPasswordFragment fragment = new ChangeStudentsPasswordFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frame_layout, fragment, "ChangePass");
+            fragmentTransaction.commit();
+
+        }
 
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;

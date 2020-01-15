@@ -51,12 +51,6 @@ public class MainActivity extends AppCompatActivity {
                 {
                     spinnerOption ="Teacher";
                 }
-                else if(item != null && (item.toString()).equals("Guardian"))
-                {
-
-                    spinnerOption ="Guardian";
-
-                }
                 else
                 {
                     spinnerOption = "Select Anything";
@@ -85,10 +79,6 @@ public class MainActivity extends AppCompatActivity {
                 else if (spinnerOption.equals("Teacher"))
                 {
                     startActivity(new Intent(MainActivity.this,TeachersLoginActivity.class));
-                }
-                else if (spinnerOption.equals("Guardian"))
-                {
-                    startActivity(new Intent(MainActivity.this,GuardianLoginActivity.class));
                 }
                 else {
                     Toast.makeText(MainActivity.this, "Select Anything", Toast.LENGTH_SHORT).show();
