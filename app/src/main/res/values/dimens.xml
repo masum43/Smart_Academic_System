@@ -16,4 +16,11 @@
 
     <dimen name="social_media_vertical_padding">10dp</dimen>
     <dimen name="icon_size">25dp</dimen>
+
+
+
+    <!-- spinner !-->
+    <dimen name="spacing_middle">15dp</dimen>
+    <dimen name="padding">8dp</dimen>
+    <dimen name="font_size">14sp</dimen>
 </resources>

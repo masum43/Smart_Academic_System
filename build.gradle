@@ -4,6 +4,7 @@ buildscript {
     repositories {
         google()
         jcenter()
+
         
     }
     dependencies {
@@ -18,6 +19,9 @@ allprojects {
     repositories {
         google()
         jcenter()
+
+        //ERROR: Failed to resolve: com.github.ozodrukh:CircularReveal:2.0.1 solving
+        maven { url "https://jitpack.io" }
         
     }
 }
