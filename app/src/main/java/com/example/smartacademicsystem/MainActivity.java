@@ -2,32 +2,24 @@ package com.example.smartacademicsystem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import com.example.smartacademicsystem.spinner.adapter.PersonListAdapter;
 import com.example.smartacademicsystem.spinner.adapter.StringListAdapter;
 import com.example.smartacademicsystem.spinner.model.Person;
 import com.github.bkhezry.searchablespinner.SearchableSpinner;
 import com.github.bkhezry.searchablespinner.interfaces.IStatusListener;
 import com.github.bkhezry.searchablespinner.interfaces.OnItemSelectedListener;
-
 import java.util.ArrayList;
 import java.util.Collections;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -173,11 +165,11 @@ public class MainActivity extends AppCompatActivity {
 
         if(spinnerOption.equals("Student"))
         {
-            startActivity(new Intent(this,StudentHomeActivity.class));
+            startActivity(new Intent(this,StudentLoginActivity.class));
         }
         else if(spinnerOption.equals("Teacher"))
         {
-            startActivity(new Intent(this,TeachersHomeActivity.class));
+            startActivity(new Intent(this,TeachersLoginActivity.class));
         }
         else {
             Toast.makeText(this, "Please select who you are....", Toast.LENGTH_SHORT).show();
