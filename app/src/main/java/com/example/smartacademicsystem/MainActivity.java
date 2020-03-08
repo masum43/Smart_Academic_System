@@ -20,6 +20,7 @@ import com.github.bkhezry.searchablespinner.interfaces.IStatusListener;
 import com.github.bkhezry.searchablespinner.interfaces.OnItemSelectedListener;
 import java.util.ArrayList;
 import java.util.Collections;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
