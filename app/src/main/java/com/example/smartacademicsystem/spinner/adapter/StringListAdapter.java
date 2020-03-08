@@ -100,7 +100,7 @@ public class StringListAdapter extends ArrayAdapter<String> implements Filterabl
       }
       final ArrayList<String> filterStrings = new ArrayList<>();
       for (String text : mBackupStrings) {
-        if (text.toLowerCase().contains(constraint)) {
+        if (text.toLowerCase().contains(constraint) || text.toUpperCase().contains(constraint) || text.contains(constraint)) {
           filterStrings.add(text);
         }
       }

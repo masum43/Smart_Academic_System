@@ -164,14 +164,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void okBtn(View view) {
 
-        if(spinnerOption.equals("Student"))
+        if (spinnerOption!=null)
         {
-            startActivity(new Intent(this,StudentLoginActivity.class));
+            if(spinnerOption.equals("Student"))
+            {
+                startActivity(new Intent(this,StudentLoginActivity.class));
+            }
+            else if(spinnerOption.equals("Teacher"))
+            {
+                startActivity(new Intent(this,TeachersLoginActivity.class));
+            }
         }
-        else if(spinnerOption.equals("Teacher"))
-        {
-            startActivity(new Intent(this,TeachersLoginActivity.class));
-        }
+
         else {
             Toast.makeText(this, "Please select who you are....", Toast.LENGTH_SHORT).show();
         }
