@@ -1,2 +1,2 @@
-include ':app', ':persiansearchablespinner'
+include ':app'
 rootProject.name='Smart Academic System'

@@ -4,25 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
-import com.example.smartacademicsystem.spinner.adapter.StringListAdapter;
-import com.example.smartacademicsystem.spinner.model.Person;
-import com.github.bkhezry.searchablespinner.SearchableSpinner;
-import com.github.bkhezry.searchablespinner.interfaces.IStatusListener;
-import com.github.bkhezry.searchablespinner.interfaces.OnItemSelectedListener;
 import java.util.ArrayList;
-import java.util.Collections;
-
-import butterknife.BindView;
 import butterknife.ButterKnife;
+import in.galaxyofandroid.spinerdialog.OnSpinerItemClick;
+import in.galaxyofandroid.spinerdialog.SpinnerDialog;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,27 +25,17 @@ public class MainActivity extends AppCompatActivity {
     private String[] services_name;
     private String spinnerOption;
     private Button okBtn;
+    Toolbar toolbar;
+
+
 
     //spinner
-    Toolbar toolbar;
-    @BindView(R.id.searchable_spinner)
-    SearchableSpinner searchableSpinner;
-    SearchableSpinner searchableSpinner1;
-    SearchableSpinner searchableSpinner2;
-    private StringListAdapter mStringListAdapter;
-    private ArrayList<String> mStrings = new ArrayList<>();
-    private ArrayList<Person> mPersons = new ArrayList<>();
-    private ArrayList<Person> mPersons1 = new ArrayList<>();
-    private boolean isSpinnerOpen = false;
-    private String[] names = {
-            "Teacher",
-            "Student"
+    private ArrayList<String> TypeAl = new ArrayList<>();
+    private RelativeLayout selectCompanyRel;
+    private TextView selectedCompanyTv;
+    SpinnerDialog spinnerDialog;
 
-    };
-    private String[] emails = {
-            "aardo@yahoo.ca",
-            "mfburgo@icloud.com"
-    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,71 +44,48 @@ public class MainActivity extends AppCompatActivity {
 
         okBtn = findViewById(R.id.okBtnId);
 
+        selectCompanyRel = findViewById(R.id.selectCompanyBtnId);
+        selectedCompanyTv = findViewById(R.id.selected_company_text_id);
+
         //adding spinner
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
 
-        initStringListValues();
-        mStringListAdapter = new StringListAdapter(this, mStrings, "DroidNaskh-Regular.ttf");
+        TypeAl.add("Teacher");
+        TypeAl.add("Student");
 
-        searchableSpinner.setFontName("DroidNaskh-Regular.ttf");
-        searchableSpinner.setAdapter(mStringListAdapter);
-        searchableSpinner.setSpinnerBorderColor(Color.BLACK);
-        searchableSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+        spinnerDialog = new SpinnerDialog(this, TypeAl, getString(R.string.Select_or_search_company), "Close");// With No Animation
+        spinnerDialog = new SpinnerDialog(this, TypeAl, getString(R.string.Select_or_search_company), R.style.DialogAnimations_SmileWindow, "Close");// With 	Animation
+
+        spinnerDialog.setCancellable(true); // for cancellable
+        spinnerDialog.setShowKeyboard(false);// for open keyboard by default
+
+
+        spinnerDialog.bindOnSpinerListener(new OnSpinerItemClick() {
             @Override
-            public void onItemSelected(View view, int position, long id) {
-                Toast.makeText(MainActivity.this,  mStringListAdapter.getItem(position) + " Selected", Toast.LENGTH_LONG).show();
-                spinnerOption = mStringListAdapter.getItem(position);
+            public void onClick(String item, int position) {
+                //Toast.makeText(InitialActivity.this, item + "  " + position + "", Toast.LENGTH_SHORT).show();
+                spinnerOption = item;
+                selectedCompanyTv.setText(item);
 
-            }
 
-            @Override
-            public void onNothingSelected() {
-
-            }
-        });
-        searchableSpinner.setStatusListener(new IStatusListener() {
-            @Override
-            public void spinnerIsOpening() {
-                isSpinnerOpen = true;
-
-            }
-
-            @Override
-            public void spinnerIsClosing() {
-                isSpinnerOpen = false;
             }
         });
-        initPersonListValues();
-        //mPersonListAdapter = new PersonListAdapter(this, mPersons, "DroidNaskh-Regular.ttf");
+
+        selectCompanyRel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                spinnerDialog.showSpinerDialog();
+            }
+        });
+
+
     }
 
 
 
 
-
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        if (!searchableSpinner.isInsideSearchEditText(event)) {
-            searchableSpinner.hideEdit();
-        }
-        return super.onTouchEvent(event);
-    }
-
-    private void initStringListValues() {
-        Collections.addAll(mStrings, names);
-    }
-
-    private void initPersonListValues() {
-        for (int i = 0; i < emails.length; i++) {
-            Person person = new Person();
-            person.setId((long) i);
-            person.setName(names[i]);
-            person.setEmail(emails[i]);
-            mPersons.add(person);
-            mPersons1.add(person);
-        }
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -152,15 +113,6 @@ public class MainActivity extends AppCompatActivity {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
-    @Override
-    public void onBackPressed() {
-        if (isSpinnerOpen) {
-            searchableSpinner.hideEdit();
-            searchableSpinner1.hideEdit();
-        } else {
-            super.onBackPressed();
-        }
-    }
 
     public void okBtn(View view) {
 
